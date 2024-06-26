@@ -2,7 +2,6 @@ version: '3.9'
 
 networks:
   jenkins:
-    external: true
 
 services:
   jenkins-docker:
@@ -20,13 +19,6 @@ services:
     ports:
       - "2376:2376"
     command: --storage-driver overlay2
-
-  jenkins-network-creator:
-    image: alpine
-    container_name: jenkins-network-creator
-    networks:
-      - jenkins
-    command: sh -c "sleep 10 && docker network create jenkins"
 
   jenkins-blueocean:
     build:
