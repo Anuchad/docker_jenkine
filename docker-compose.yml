@@ -10,7 +10,9 @@ services:
     restart: unless-stopped
     privileged: true
     networks:
-      - jenkins
+      jenkins:
+        aliases:
+          - docker
     environment:
       - DOCKER_TLS_CERTDIR=/certs
     volumes:
@@ -25,6 +27,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: jenkins-blueocean
+    image: myjenkins-blueocean:2.452.2-1
     restart: on-failure
     networks:
       - jenkins
