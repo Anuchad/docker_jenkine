@@ -1,4 +1,4 @@
-version: '3'
+version: '3.9'
 
 networks:
   jenkins:
@@ -46,9 +46,6 @@ services:
     ports:
       - "8080:8080"
       - "50000:50000"
-
-# networks:
-#   jenkins:
 
 volumes:
   jenkins-data:
