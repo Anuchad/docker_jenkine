@@ -32,7 +32,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: jenkins-blueocean-test
+    container_name: jenkins-blueocean
     restart: on-failure
     networks:
       - jenkins
